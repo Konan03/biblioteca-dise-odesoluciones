@@ -2,20 +2,20 @@ package model;
 
 import java.time.LocalDate;
 
-public class EmpresaBiblioteca {
+public class Biblioteca {
 
-    private static EmpresaBiblioteca empresaBiblioteca;
+    private static Biblioteca empresaBiblioteca;
     private String razonSocial;
     private LocalDate fechaFuncacion;
     private String nit;
 
-    private EmpresaBiblioteca(){
+    private Biblioteca(){
 
     }
 
-    public static EmpresaBiblioteca getEmpresa(){
+    public static Biblioteca getEmpresa(){
         if(empresaBiblioteca == null){
-            empresaBiblioteca = new EmpresaBiblioteca();
+            empresaBiblioteca = new Biblioteca();
             empresaBiblioteca.setRazonSocial("Razon social");
             empresaBiblioteca.setNit("100879459-0");
             empresaBiblioteca.setFechaFuncacion(LocalDate.now());
@@ -23,12 +23,12 @@ public class EmpresaBiblioteca {
         return empresaBiblioteca;
     }
 
-    public static EmpresaBiblioteca getEmpresaBiblioteca() {
+    public static Biblioteca getEmpresaBiblioteca() {
         return empresaBiblioteca;
     }
 
-    public static void setEmpresaBiblioteca(EmpresaBiblioteca empresaBiblioteca) {
-        EmpresaBiblioteca.empresaBiblioteca = empresaBiblioteca;
+    public static void setEmpresaBiblioteca(Biblioteca empresaBiblioteca) {
+        Biblioteca.empresaBiblioteca = empresaBiblioteca;
     }
 
     public String getRazonSocial() {
