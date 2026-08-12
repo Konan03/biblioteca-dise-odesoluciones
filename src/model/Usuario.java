@@ -80,6 +80,10 @@ public abstract class Usuario {
         this.genero = genero;
     }
 
+    public boolean validarUsuario() {
+        return nombre != null && id != 0 && fechaNacimiento != null;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
