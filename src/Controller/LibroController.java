@@ -1,4 +1,8 @@
 package Controller;
 
-public class LibroController {
+import model.Libro;
+
+public class LibroController{
+
 }
+

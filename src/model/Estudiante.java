@@ -1,16 +1,13 @@
 package model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Estudiante extends Usuario{
+public class Estudiante extends Usuario implements IActualizableUsuario {
 
     private String codigoEstudiante;
     private String programaAcademico;
     private int semestre;
 
-    //  ¡Ahora sí recibe los 10 parámetros necesarios!
     public Estudiante(int id, String nombre, String tipoIdentificacion, String noIdentificacion, int edad, LocalDate fechaNacimiento, String genero, String codigoEstudiante, String programaAcademico, int semestre) {
         super(id, nombre, tipoIdentificacion, noIdentificacion, edad, fechaNacimiento, genero);
         this.codigoEstudiante = codigoEstudiante;
@@ -18,21 +15,45 @@ public class Estudiante extends Usuario{
         this.semestre = semestre;
     }
 
-
-    //Tenemos nuestra clase Estudiante.
-    //Ahora queremos registrar estudiantes en nuestra biblioteca.
-    //¿Dónde guardamos la lista?
-    //
-    //Porque ahora Estudiante tendría dos responsabilidades:
-    //Estudiante
-    //│
-    //├── representar un estudiante
-    //│
-    //└── administrar estudiantes
-    private static List<Estudiante> estudiantes = new ArrayList<>();
-
-    public void guardar() {
-        estudiantes.add(this);
+    public String getCodigoEstudiante() {
+        return codigoEstudiante;
     }
 
+    public void setCodigoEstudiante(String codigoEstudiante) {
+        this.codigoEstudiante = codigoEstudiante;
+    }
+
+    public String getProgramaAcademico() {
+        return programaAcademico;
+    }
+
+    public void setProgramaAcademico(String programaAcademico) {
+        this.programaAcademico = programaAcademico;
+    }
+
+    public int getSemestre() {
+        return semestre;
+    }
+
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
+
+    @Override
+    public void actualizarDatos(Usuario usuario) {
+        if (usuario instanceof Estudiante) {
+
+            Estudiante estudiante =
+                    (Estudiante) usuario;
+
+            this.codigoEstudiante =
+                    estudiante.getCodigoEstudiante();
+
+            this.programaAcademico =
+                    estudiante.getProgramaAcademico();
+
+            this.semestre =
+                    estudiante.getSemestre();
+        }
+    }
 }

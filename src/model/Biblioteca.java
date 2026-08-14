@@ -6,7 +6,7 @@ public class Biblioteca {
 
     private static Biblioteca empresaBiblioteca;
     private String razonSocial;
-    private LocalDate fechaFuncacion;
+    private LocalDate fechaFundacion;
     private String nit;
 
     private Biblioteca(){
@@ -18,7 +18,7 @@ public class Biblioteca {
             empresaBiblioteca = new Biblioteca();
             empresaBiblioteca.setRazonSocial("Razon social");
             empresaBiblioteca.setNit("100879459-0");
-            empresaBiblioteca.setFechaFuncacion(LocalDate.now());
+            empresaBiblioteca.setFechaFundacion(LocalDate.now());
         }
         return empresaBiblioteca;
     }
@@ -40,11 +40,11 @@ public class Biblioteca {
     }
 
     public LocalDate getFechaFuncacion() {
-        return fechaFuncacion;
+        return fechaFundacion;
     }
 
-    public void setFechaFuncacion(LocalDate fechaFuncacion) {
-        this.fechaFuncacion = fechaFuncacion;
+    public void setFechaFundacion(LocalDate fechaFuncacion) {
+        this.fechaFundacion = fechaFuncacion;
     }
 
     public String getNit() {
@@ -59,7 +59,7 @@ public class Biblioteca {
     public String toString() {
         return "EmpresaBiblioteca{" +
                 "razonSocial='" + razonSocial + '\'' +
-                ", fechaFuncacion=" + fechaFuncacion +
+                ", fechaFuncacion=" + fechaFundacion +
                 ", nit='" + nit + '\'' +
                 '}';
     }
